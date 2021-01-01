@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Posts from './Components/Posts/Posts';
+import {Container,Button} from '@material-ui/core';
+import AddCircleRoundedIcon from '@material-ui/icons/AddCircleRounded';
+import AddPost from './Components/AddPost/AddPost'
+import Post from './Post'
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  return (<div>
+      
+      <Container >
+        <Button mb={3} size='large'>Add post<AddCircleRoundedIcon/></Button>
+        <Posts />
+      </Container>
+      <AddPost />
     </div>
   );
 }
