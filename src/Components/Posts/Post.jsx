@@ -34,7 +34,7 @@ function Post({id,title,body,handleDelete}) {
             dispatch(updateBody(id,e.target.value))}}></Input>
         </CardContent>
         <CardActions>
-          <Button startIcon={<DeleteIcon />} onClick={()=>handleDelete()} variant="contained" color="secondary" size="small">Delete</Button>
+          <Button startIcon={<DeleteIcon />} onClick={()=>handleDelete(id)} variant="contained" color="secondary" size="small">Delete</Button>
         </CardActions>
       </Card>
         </div>
