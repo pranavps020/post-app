@@ -12,13 +12,13 @@ function Posts() {
     const handleDelete = (id) => {
         dispatch(deletePost(id));
     }
-
+    
     return (
         <div>
         <Grid container justify="center" spacing={4}>
         {PostsCollection.map((post) => (
             <Grid key={post.id} item  xs={12} sm={6} md={4} lg={3}> 
-             <Post handleDelete={handleDelete} id={post.id} head={post.title} body={post.body}/>
+             <Post handleDelete={handleDelete} id={post.id} title={post.title} body={post.body}/>
             </Grid>))}
         </Grid>
         </div>

@@ -24,3 +24,19 @@ export const getPosts = () => async (dispatch) => {
       console.log(error.message);
     }
   };
+
+  export const updateTitle = (id,value) => async (dispatch) => {
+    try {
+      dispatch({ type: 'UPDATE_TITLE', payload: {id:id, newTitle:value}});
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  export const updateBody = (id,value) => async (dispatch) => {
+    try {
+      dispatch({ type: 'UPDATE_BODY', payload: {id:id, newBody:value}});
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
