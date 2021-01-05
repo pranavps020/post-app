@@ -18,8 +18,8 @@ function App() {
 
   return (<div style={{ backgroundColor: '#ECE2E0'}}>
       <Container >
-       <Link to="/addpost"> <Button mb={3} size='large'>Add post<AddCircleRoundedIcon/></Button> </Link>
-       <Link to="/"> <Button mb={3} size='large'>Home</Button> </Link>
+       <Link style={{ textDecoration: 'none'}} to="/addpost"> <Button size='large'>Add post<AddCircleRoundedIcon/></Button> </Link>
+       <Link style={{ textDecoration: 'none'}} to="/"> <Button size='large'>Home</Button> </Link>
        <Route exact path="/" >  <Posts /> </Route>
       </Container>
       <Route path="/addpost" > <AddPost /> </Route> 
