@@ -16,7 +16,7 @@ function App() {
   }
   ,[dispatch])
 
-  return (<div>
+  return (<div style={{ backgroundColor: '#ECE2E0'}}>
       <Container >
        <Link to="/addpost"> <Button mb={3} size='large'>Add post<AddCircleRoundedIcon/></Button> </Link>
        <Link to="/"> <Button mb={3} size='large'>Home</Button> </Link>
