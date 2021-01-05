@@ -23,7 +23,7 @@ function AddPost() {
     return (
        <Container >
        <Typography variant='h2'>Write your post here</Typography>
-        <form noValidate autoComplete="off" onSubmit={handleSubmit}>
+        <form validate autoComplete="off" onSubmit={handleSubmit}>
         <TextField
           variant="outlined"
           margin="normal"
