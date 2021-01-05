@@ -4,7 +4,7 @@ export default (posts=[], action) => {
         case 'FETCH_ALL':
             return action.payload;
         case 'ADD_POST' :
-            return [...posts, action.payload];    
+            return [action.payload].concat(posts);    
         case 'DELETE' :
             return posts.filter((post) => post.id !== action.payload);
         case 'UPDATE_TITLE' :{

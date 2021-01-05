@@ -25,9 +25,9 @@ export const getPosts = () => async (dispatch) => {
     }
   };
 
-  export const updateTitle = (id,value) => async (dispatch) => {
+  export const updateTitle = (id,Title) => async (dispatch) => {
     try {
-      dispatch({ type: 'UPDATE_TITLE', payload: {id:id, newTitle:value}});
+      dispatch({ type: 'UPDATE_TITLE', payload: {id:id, newTitle:Title}});
     } catch (error) {
       console.log(error.message);
     }
