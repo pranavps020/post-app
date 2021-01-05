@@ -24,6 +24,7 @@ const useStyles = makeStyles({
 function Post({id,title,body,handleDelete}) {
   const [Update, setUpdate] = useState(false)
   const [Title, setTitle] = useState(title)  
+  const [Body, setBody] = useState(body)  
   
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -32,15 +33,25 @@ function Post({id,title,body,handleDelete}) {
         setUpdate(!Update);
     }
 
-   const handleChange=(e)=>{
+   const handleTitleChange=(e)=>{
       setTitle(e.target.value);
+    }
+   const handleBodyChange=(e)=>{
+      setBody(e.target.value);
     }
  
     const renderTitle = ()=>{
       if(Update){
-        return <Input multiline='true' fullWidth='true'  value={Title} onChange={handleChange} ></Input>
+        return <Input multiline='true' fullWidth='true'  value={Title} onChange={handleTitleChange} ></Input>
       } else{
         return <h4>{Title}</h4>
+      }
+    }
+    const renderBody = ()=>{
+      if(Update){
+        return <Input multiline='true' fullWidth='true'  value={Body} onChange={handleBodyChange} ></Input>
+      } else{
+        return <p>{Body}</p>
       }
     }
 
@@ -56,15 +67,16 @@ function Post({id,title,body,handleDelete}) {
     const handleSubmit = (id) => {
      toggleUpdate()
      dispatch(updateTitle(id,Title))
+     dispatch(updateBody(id,Body))
     }
+
 
     return (
         <div>
         <Card className={classes.root}>
         <CardContent>
             {renderTitle()}
-          <Input multiline='true' fullWidth='true' disableUnderline='true' value={body} onChange={(e)=>{
-            dispatch(updateBody(id,e.target.value))}}></Input>
+            {renderBody()}
         </CardContent>
         <CardActions>
            {renderButtons()}
